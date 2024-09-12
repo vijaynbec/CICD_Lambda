@@ -18,10 +18,9 @@ phases:
       - aws lambda update-function-code --function-name CICD_Lambda_Function --zip-file fileb://lambda.zip
       - echo Publishing new version...
       - VERSION=$(aws lambda publish-version --function-name CICD_Lambda_Function --query 'Version' --output text)
-      - echo "New Lambda function version: $VERSION"
-      - echo Promoting Lambda function version to alias...
+      # - echo "New Lambda function version: $VERSION"
+      # - echo Promoting Lambda function version to alias...
       - aws lambda update-alias --function-name CICD_Lambda_Function --name stage --function-version $VERSION
-
 artifacts:
   files:
     - lambda.zip
