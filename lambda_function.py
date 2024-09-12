@@ -14,7 +14,7 @@ def lambda_handler(event, context):
 <body>
     <h1>CI/CD pipeline</h1>
     <p>Let's build a CI/CD pipeline, to automate the deployment.</p>
-    <h2>We have successfully build our first CI/CD pipeline into Lambda Function Version-2. Well Done!!!</h2>
+    <h2>We have successfully build our first CI/CD pipeline into Lambda Function Version-3. Well Done!!!</h2>
 </body>
 </html>
     """
