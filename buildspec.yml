@@ -1,4 +1,5 @@
 version: 0.2
+
 phases:
   install:
     commands:
@@ -7,11 +8,13 @@ phases:
   pre_build:
     commands:
       - echo Preparing Lambda function...
+      - mkdir -p /codebuild/output/lambda/
       - cp -r lambda/* /codebuild/output/lambda/
   build:
     commands:
       - echo Building Lambda function package...
-      - zip -r lambda.zip /codebuild/output/lambda/
+      - cd /codebuild/output/lambda/
+      - zip -r lambda.zip .
   post_build:
     commands:
       - echo Deploying Lambda function...
@@ -21,6 +24,7 @@ phases:
       # - echo "New Lambda function version: $VERSION"
       # - echo Promoting Lambda function version to alias...
       - aws lambda update-alias --function-name CICD_Lambda_Function --name stage --function-version $VERSION
+
 artifacts:
   files:
     - lambda.zip
