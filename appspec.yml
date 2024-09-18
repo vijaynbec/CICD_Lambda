@@ -6,8 +6,8 @@ Resources:
       Properties:
         Name: "CICD_Lambda_Function"
         Alias: "stage"
-        CurrentVersion: "2"
-        TargetVersion: "6"
+        CurrentVersion: "6"
+        TargetVersion: "7"
 # Hooks:
 #   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
 #   - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
